@@ -1,0 +1,101 @@
+# Teks, Angka dan Rumus Perhitungan
+9
+"Budi"
+9 * 3
+
+
+# Fungsi print
+# Untuk mencetak hasil
+print("Hello World!") # menampilkan Hello World!
+print(3 + 4) # menampilkan 7
+
+
+# Variable
+# dimasukkan dengan tanda '<-'
+budi_berat_kg <- 68
+santi_berat_kg <- 54.5
+budi_berat_kg
+santi_berat_kg
+# ketika variable dipanggil, akan menampilkan nilainya, yaitu
+# 68
+# 54.5
+
+
+# Komentar pakai tanda"#"
+
+
+# Vector, List, dan DataFrame
+# Vector memiliki tipe data sama dalam satu kelompok
+# Membuat vector harus diawali dengan huruf c
+c(4, 5, 6) # menghasilkan vector 4 5 6
+angka <- c(4, 5, 6) # variable angka adalah data vector dari 4 5 6
+print(angka)
+# menghasilkan
+# [1] 4 5 6
+
+# dengan tanda : , berarti dari sekian sampai sekian
+angka2 <- c(1:10)
+print(angka2)
+# menampilkan
+# [1] 1 2 3 4 5 6 7 8 9 10
+
+# Vector isi Teks
+nama_mahasiswa <- c("Amira", "Budi", "Charlie")
+print(nama_mahasiswa)
+# menghasilkan
+[1] "Amira"  "Budi"  "Charlie"
+
+# Indeks dan Assessor pada Vector
+angka <- c(20:30)
+print(angka)
+# [1] 20 21 22 23 24 25 26 27 28 29 30
+print(angka[3]) # mengambil indeks ke-3. Data pertama dihitung sebagai indeks kesatu ([1])
+# [1] 22
+print(angka[5])  # mengambil indeks ke-5
+# [1] 24
+kode_prodi <- c("DKV", "ILKOM", "ICT")
+print)kode_prodi[3]) # menampilkan ICT
+
+# Named Vector
+# Vektor yang memiliki nama dan nilai pada masing2 data
+nilai <- c(statistik = 89, fisika = 95, ilmukomunikasi = 100)
+print(nilai)
+# menghasilkan
+#   statistik   fisika   ilmukomunikasi
+#      89         95          100
+print(nilai["fisika"]) # menampilkan 95
+# catatan: pada function print, name diberi tanda petik
+
+
+# List
+# memiliki lebih dari 1 tipe data yang ada pada setiap elemen
+list_saya <- (2, "Budi", 4)
+# Indeks
+list_saya[2] # menghasilkan Budi
+
+
+# Data Frame
+# representasi dari bentuk tabel
+# dibuat dengan menggabungkan vector
+fakultas <- c("Bisnis", "D3 Perhotelan", "ICT", "Ilmu Komunikasi", "Seni dan Desain")
+jumlah_mahasiswa <- c(260, 28, 284, 465, 735)
+akreditasi <- c("A", "A", "B", "A", "A")
+
+info_mahasiswa <- data.frame(fakultas, jumlah_mahasiswa, akreditasi)
+info_mahasiswa
+# menampilkan
+#          fakultas  jumlah_mahasiswa  akreditasi
+# 1          Bisnis               260           A
+# 2   D3 Perhotelan                28           A
+# 3             ICT               284           B
+# 4 Ilmu Komunikasi               465           A
+# 5 Seni dan Desain               735           A
+
+# mengakses data.frame
+info_mahasiswa$jumlah_mahasiswa
+# menampilkan
+# [1] 260  28  284  465  735
+info_mahasiswa$fakultas
+# menampilkan
+# [1] Bisnis   D3 Perhotelan   ICT   Ilmu Komunikasi   Seni dan Desain
+
