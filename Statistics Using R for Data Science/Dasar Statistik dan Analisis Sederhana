@@ -1,0 +1,87 @@
+# Dasar-dasar statistika
+
+# Membaca dataset dengan read.csv
+data_intro <- read.csv("https://storage.googleapis.com/dqlab-dataset/data-intro.csv", sep=";")
+
+# Melihat tipe data dengan str
+str(data_intro)
+
+# Mengubah Tipe Data
+# Kolom ID. Pelanggan menjadi Character
+data_intro$ID.Pelanggan <- as.character(data_intro$ID.Pelanggan)
+data_intro$Nama <- as.character(data_intro$Nama)
+# Melihat apakah perubahan berhasil
+str(data_intro$ID.Pelanggan)
+str(data_intro$Nama)
+
+# Mengubah Sejumlah Kolom menjadi Kategori (Factor)
+data_intro$Jenis.Kelamin <- as.factor(data_intro$Jenis.Kelamin)
+data_intro$Produk <- as.factor(data_intro$Produk)
+data_intro$Tingkat.Kepuasan <- as.factor(data_intro$Tingkat.Kepuasan)
+# Melihat perubahan tipe data
+str(data_intro$Jenis.Kelamin)
+str(data_intro$Produk)
+str(data_intro$Tingkat.Kepuasan)
+
+# Melihat data
+data_intro
+# Melihat tipe data
+str(data_intro)
+
+# Estimasi Karakteristik
+# Ukuran pemusatan
+
+# Modus
+library(pracma)
+Mode(data_intro$Produk)
+Mode(data_intro$Tingkat.Kepuasan)
+
+# Median
+median(data_intro$Pendapatan)
+median(data_intro$Harga)
+median(data_intro$Jumlah)
+median(data_intro$Total)
+
+# Mean
+mean(data_intro$Pendapatan)
+mean(data_intro$Harga)
+mean(data_intro$Jumlah)
+mean(data_intro$Total)
+
+# Sebaran data
+# Range
+max(data_intro$Pendapatan) - min(data_intro$Pendapatan)
+# Variasi
+var(data_intro$Pendapatan)
+# Simpangan baku (standar deviasi)
+sd(data_intro$Pendapatan)
+
+
+
+# Analisis Data Sederhana
+
+# Analisis Deskriptif
+summary(data_intro)
+# Analisis Deskriptif dengan visualisasi
+plot(data_intro$Jenis.Kelamin)
+hist(data_intro$Pendapatan)
+plot(data_intro$Produk)
+hist(data_intro$Harga)
+hist(data_intro$Jumlah)
+hist(data_intro$Total)
+plot(data_intro$Tingkat.Kepuasan)
+
+
+# Analisis Inferensia
+
+# Hubungan Antara Variabel Numerik
+# Scatter Plot
+# plot(x,y)
+plot(data_intro$Pendapatan, data_intro$Total)
+
+# Hubungan Pendapatan dengan Total Belanja menggunakan cor.test
+cor.test(data_intro$Pendapatan, data_intro$Total)
+# Hasil
+# t = 3.1168, df =18, p-value = 0.005957
+# alternate hypothesis: true correlation is not equal to 0
+# 95 percent confidence 
