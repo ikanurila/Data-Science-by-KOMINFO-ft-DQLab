@@ -79,9 +79,32 @@ plot(data_intro$Tingkat.Kepuasan)
 # plot(x,y)
 plot(data_intro$Pendapatan, data_intro$Total)
 
+# Hubungan Antara Data Numerik
 # Hubungan Pendapatan dengan Total Belanja menggunakan cor.test
 cor.test(data_intro$Pendapatan, data_intro$Total)
 # Hasil
 # t = 3.1168, df =18, p-value = 0.005957
-# alternate hypothesis: true correlation is not equal to 0
-# 95 percent confidence 
+# alternate hypothesis: true correlation is not equal to 0 --> ada korelasi secara signifikan, p-value < 0,05
+# 95 percent confidence interval :
+#  0.2026033   0.8197871
+# sample estimate:
+#     cor
+# 0.5920437 --> sedang
+
+# Hubungan Antara Variabel Kategorik
+# Hubungan Produk dengan Tingkat Kepuasan dengan chisq.test
+# Mencari tabulasi silang
+table(data_intro$Produk, data_intro$Tingkat.Kepuasan)
+# Analisis hubungan Produk dengan Tingkat Kepuasan
+chisq.test(table(data_intro$Produk, data_intro$Tingkat.Kepuasan))
+# Hasil
+# X-squared = 7.95, df = 8, p-value = 0.4384 --> p-value > 0,05
+# Tidak ada hubungan/korelasi antara produk dengan tingkat kepuasan
+
+# Hubungan Antara Variabel Kategorik dan Variabel Numerik
+# Hubungan Jenis Kelamin dengan Total Belanja menggunakan t.test
+# membuat boxplot
+boxplot(Total~Jenis.Kelamin, data = data_intro)
+# analisis hubungan jenis kelamin dan total belanja
+t.test(Total~Jenis.Kelamin, data = data_intro)
+# cara membaca seperti menggunakan cor.test, H0 ditolak jika p-value < 0,05 (tingkat signifikansi)
